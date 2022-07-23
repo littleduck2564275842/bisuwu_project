@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../lib/template-web.js"></script>
+  <script src="../../lib/jquery.js"></script>
+</head>
+<body>
+  <!-- 模板html结构 -->
+  <script type="text/html" id="moban">
+    <h1>My name is {{name}}, and my age is {{age}}</h1>
+    {{regTime | dateFormat}}
+  </script>
+
+  <script>
+    //定义一个格式化时间的过滤器dateFormat如下：
+    template.defaults.imports.dateFormat = function(date){
+      var y = date.getFullYear();
+      return '年份是：' + y;
+    }
+
+    //定义数据
+    var data = { name: 'zhangsan', agee: 20, regTime: new Date()}
+    //调用template函数
+    var Str = template('moban',data)
+    //渲染HTML结构
+    $('body').html(Str)
+  </script>
+</body>
+</html>

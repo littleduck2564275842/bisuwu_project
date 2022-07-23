@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./myAjax.js"></script>
+</head>
+
+<body>
+  <input type="text"/>
+
+  <script>
+
+    myAjax({
+      method: 'post',
+      url: 'http://www.liulongbin.top:3006/api/addbook',
+      data: {
+        bookname: '水浒传heh',
+        author: '李林23',
+        publisher: '社富1'
+      },
+      success: function (res) {
+        console.log(res)
+      }
+    })
+  </script>
+</body>
+
+</html>

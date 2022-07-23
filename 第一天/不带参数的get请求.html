@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../jQuery/jquery.mini.js"></script>
+</head>
+<body>
+  <button>发起不带参数的GET请求</button>
+  <script>
+    $(function(){//入口函数
+      $("button").on('click', function(){
+        $.get('http://www.liulongbin.top:3006/api/getbooks', { author: "吴承恩" }, function(response){//通过response拿到服务器响应的数据
+          console.log(response);
+        })
+      })
+    })
+  </script>
+</body>
+</html>
