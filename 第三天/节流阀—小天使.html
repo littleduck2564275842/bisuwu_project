@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    body{
+    body {
       margin: 0;
       padding: 0;
     }
+
     img {
       position: absolute;
       top: 0;
@@ -17,20 +19,23 @@
     }
   </style>
 </head>
+
 <body>
+  123
   <img src="./images/angel.gif" alt="">
   <script>
     var img = document.querySelector('img')
     var timer = null
-    document.addEventListener('mousemove', function(e){
+    document.addEventListener('mousemove', function (e) {
       //判断节流阀是否为空
-      if(timer != null) return 
-      timer = setTimeout(function(){
+      if (timer != null) return
+      timer = setTimeout(function () {
         img.style.top = e.pageY + 'px'
         img.style.left = e.pageX + 'px'
         timer = null
-      },16)
+      }, 16)
     })
   </script>
 </body>
+
 </html>
